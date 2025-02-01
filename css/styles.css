@@ -363,7 +363,7 @@ nav ul li a.active::after,.menu-list ul li a.active {
 }
 
 .content-3-left{
-  flex-basis: 10%;
+  flex-basis: 15%;
   position: relative;
   text-align: right;
   font-size:20px;
@@ -393,13 +393,14 @@ nav ul li a.active::after,.menu-list ul li a.active {
   cursor: pointer;
 }
 
-.content-3-left ul li:hover{
-  background-color: #363636;
+.content-3-left ul li:hover,.content-3-left ul li.active{
+  background-color: #ff004f;
   border-radius: 20px;
 }
 
 .content-3-right{
-  flex-basis: 70%;
+  float: left;
+  flex-basis: 80%;
   display: flex;
   justify-content: center;
 }
@@ -457,6 +458,10 @@ nav ul li a.active::after,.menu-list ul li a.active {
 
 
 @media screen and (max-width:991px) { 
+
+  .content-3{
+    padding-top: 30px;
+  }
   .content-3-right .cards{
     display: grid;
     gap:30px;
@@ -467,18 +472,32 @@ nav ul li a.active::after,.menu-list ul li a.active {
   }
 }
 
-@media screen and (max-width:656px) { 
+@media screen and (max-width:720px) { 
+  .content-3{
+    padding-top: 40px;
+  }
   .content-3-right .cards{
     display: grid;
     gap:30px;
     grid-template-columns: auto;
   }
+  .content-3-right{
+    flex-basis: 70%;
+  }
 }
 
 @media screen and (max-width:490px) { 
-  
+  .content-3{
+    padding-top: 60px;
+  }
+  .content-3-left{
+    font-size: 16px;
+  }
   .content-3-left::after{
-    right:-15px;
+    right:-10px;
+  }
+  .content-3-right{
+    flex-basis: 60%;
   }
 }
 

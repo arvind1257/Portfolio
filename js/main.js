@@ -27,7 +27,7 @@ window.addEventListener("scroll",()=>{
 if(document.querySelector(".menu-list").style.display=="none"){
     document.querySelector("#bars").style.display="none";
     document.querySelector("#times").style.display="block";
-    document.querySelector(".menu-list").style.top="60px";
+    document.querySelector(".menu-list").style.top="56px";
 }
 else{
     document.querySelector("#bars").style.display="block";
@@ -39,7 +39,7 @@ function openmenu(){
     if(document.querySelector(".menu-list").style.top=="-200px"){
         document.querySelector("#bars").style.display="none";
         document.querySelector("#times").style.display="block";
-        document.querySelector(".menu-list").style.top="60px";
+        document.querySelector(".menu-list").style.top="56px";
     }
     else{
         document.querySelector("#bars").style.display="block";
