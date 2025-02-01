@@ -27,7 +27,6 @@ section {
 
 header {
   width: 100%;
-  padding: 10px 5%;
   position: fixed;
   top: 0px;
   left: 0px;
@@ -37,9 +36,13 @@ header {
 
 nav {
   display: flex;
+  position:relative;
+  padding: 10px 5%;
   align-items: center;
+  background-color: black;
   justify-content: space-between;
   flex-wrap: wrap;
+  z-index: 10;
 }
 
 header nav h1 {
@@ -48,20 +51,26 @@ header nav h1 {
   font-family: cursive;
 }
 
-nav ul li {
+.menu-list ul{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+nav ul li,.menu-list ul li {
   display: inline-block;
   list-style: none;
   margin: 10px 20px;
 }
 
-nav ul li a {
+nav ul li a,.menu-list ul li a {
   color: #fff;
   text-decoration: none;
   margin: 10px 10px;
   position: relative;
 }
 
-nav ul li a::after {
+nav ul li a::after,.menu-list ul li a::after {
   content: "";
   width: 0;
   height: 3px;
@@ -72,12 +81,66 @@ nav ul li a::after {
   transition: 0.5s;
 }
 
-nav ul li a:hover::after {
+nav ul li a:hover::after,.menu-list ul li a:hover::after {
   width: 100%;
 }
 
-nav ul li a.active::after {
+nav ul li a.active::after,.menu-list ul li a.active {
   width: 100%;
+}
+
+.menu{
+  display: none;
+}
+
+.menu-list{
+  transition: top 1s;
+    position: absolute;
+    top: -200px;
+    left:0px;
+    background-color: black;
+    width: 100%;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+}
+
+.menu i {
+  font-size:20px;
+  border:2px solid white;
+  border-radius: 3px;
+  padding:2px 4px;
+}
+ 
+@media screen and (min-width:768px) {
+    .menu-list{
+      display: none !important;
+    }
+}
+
+@media screen and (max-width:768px) {
+  .header-text {
+    font-size: 22px;
+  }
+  
+  .header-text h1 {
+    font-size: 42px;
+  }
+
+  .header-img {
+    width:  180px;
+    height: 180px;
+  }
+  
+  .header-img img {
+    width: 180px;
+    height: 240px;
+  }
+  .menu{
+    display: block;
+  }
+  .main-list{
+    display:none;
+  }
 }
 
 /* --------------------- home ------------------------- */
@@ -116,6 +179,73 @@ nav ul li a.active::after {
   font-size: 60px;
 }
 
+@media screen and (max-width:991px) {
+  .header-text {
+    font-size: 25px;
+  }
+  
+  .header-text h1 {
+    font-size: 50px;
+  }
+
+  .header-img {
+    width:  212px;
+    height: 212px;
+  }
+  
+  .header-img img {
+    width: 212px;
+    height: 283px;
+  }
+}
+
+@media screen and (max-width:768px) {
+  .header-text {
+    font-size: 22px;
+  }
+  
+  .header-text h1 {
+    font-size: 42px;
+  }
+
+  .header-img {
+    width:  180px;
+    height: 180px;
+  }
+  
+  .header-img img {
+    width: 180px;
+    height: 240px;
+  }
+}
+
+@media screen and (max-width:576px) {
+  .content {
+    flex-direction: column-reverse;
+    justify-content: center;
+    align-items: center;
+  }
+  .header-text {
+    font-size: 22px;
+  }
+  
+  .header-text h1 {
+    font-size: 42px;
+  }
+
+  .header-img {
+    border-radius: 20px;
+    width:  212px;
+    height: 212px;
+    margin-bottom: 30px;
+  }
+  
+  .header-img img {
+    width: 212px;
+    height: 283px;
+  }
+}
+
 /* ----------------------------- about ---------------------------- */
 
 #about{
@@ -134,7 +264,11 @@ nav ul li a.active::after {
 .content-2-left{
   flex-basis: 30%;
 }
-
+.content-2-left img{
+  width: 80%;
+  float:right;
+  border-radius: 15px;
+}
 .content-2-left img{
   width: 80%;
   float:right;
@@ -154,6 +288,66 @@ nav ul li a.active::after {
   line-height: 25px;
 }
 
+@media screen and (max-width:991px) { 
+  .content-2{ 
+    align-items: flex-start;
+  }
+  #about{
+    background-color: #363636;
+    padding-top:  8%;
+    padding-bottom: 2%;
+  }
+  .content-2-left{
+    flex-basis: 40%;
+  }.content-2-left img{
+    width: 100%;
+  }
+  .content-2-right{
+    flex-basis: 55%;
+  }
+}
+
+@media screen and (max-width:768px) {
+  .content-2{
+    padding-top: 20px;
+  }
+  .content-2-left{
+    flex-basis: 38%;
+  }
+  .content-2-right{
+    flex-basis: 60%;
+  }
+  .content-2-right h1{
+    font-size: 30px;
+  }
+  .content-2-right p{
+    font-size: 14px;
+    line-height: 22px;
+  }
+}
+
+@media screen and (max-width:576px) {
+  .content-2{ 
+    flex-direction: column;
+    align-items: center;
+  }
+  .content-2-left{
+    width:80%;
+    margin-bottom: 20px;
+  }
+  .content-2-right{
+    width: 80%;
+  }
+  .content-2-right h1{
+    font-size: 30px;
+  }
+  .content-2-right p{
+    font-size: 14px;
+    line-height: 22px;
+  }
+}
+
+
 /* ---------------------------- portfolio ------------------------- */
 
 #portfolio{
@@ -169,7 +363,7 @@ nav ul li a.active::after {
 }
 
 .content-3-left{
-  flex-basis: 15%;
+  flex-basis: 10%;
   position: relative;
   text-align: right;
   font-size:20px;
@@ -205,7 +399,9 @@ nav ul li a.active::after {
 }
 
 .content-3-right{
-  flex-basis: 75%;
+  flex-basis: 70%;
+  display: flex;
+  justify-content: center;
 }
 
 .content-3-right .cards{
@@ -258,6 +454,34 @@ nav ul li a.active::after {
   width:120px;
   height:120px;
 }
+
+
+@media screen and (max-width:991px) { 
+  .content-3-right .cards{
+    display: grid;
+    gap:30px;
+    grid-template-columns: auto auto;
+  }
+  .content-3-left::after{
+    right:-35px;
+  }
+}
+
+@media screen and (max-width:656px) { 
+  .content-3-right .cards{
+    display: grid;
+    gap:30px;
+    grid-template-columns: auto;
+  }
+}
+
+@media screen and (max-width:490px) { 
+  
+  .content-3-left::after{
+    right:-15px;
+  }
+}
+
 
 /* --------------- Contact ----------------- */
 
@@ -320,6 +544,15 @@ nav ul li a.active::after {
   align-self: flex-end;
 }
 
+
+@media screen and (max-width:490px) { 
+  .content-4 form{
+    width: 300px;
+  }
+}
+
+/* ---------------------- footer ---------------------- */
+
 footer{
   display: flex;
   justify-content: space-evenly;
@@ -336,14 +569,15 @@ footer .footer-middle{
   justify-content: space-evenly;
   align-items: center;
 }
+
 footer .footer-middle a{
   text-decoration: none;
 }
+
 footer .footer-middle img{
   width:35px;
   height:35px;
 }
-
 
 footer .footer-right a{
   text-decoration: none;
@@ -351,4 +585,16 @@ footer .footer-right a{
   color:white;
   padding:7px 10px;
   border-radius: 5px;
+}
+
+@media screen and (max-width:576px) { 
+  footer{
+    flex-direction: column;
+  }
+  footer div{
+    margin:20px 0px;
+  }
+  footer .footer-middle{
+    width:60%;
+  }
 }

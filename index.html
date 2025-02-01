@@ -6,6 +6,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Portfolio Page</title>
 	<link href="./css/styles.css" rel="stylesheet">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 	<style>
 
 	</style>
@@ -15,19 +16,31 @@
 	<header>
 		<nav>
 			<h1><span class="first-style">A</span>rvind</h1>
+			<ul class="main-list">
+				<li><a class="tab_link active" href="#home">Home</a></li>
+				<li><a class="tab_link" href="#about">About</a></li>
+				<li><a class="tab_link" href="#portfolio">Portfolio</a></li>
+				<li><a class="tab_link" href="#contact">Contact</a></li>
+			</ul>
+			<div class="menu">
+				<i class="fa fa-bars" id="bars" onclick="openmenu()"></i>
+				<i class="fa fa-times" id="times" onclick="openmenu()"></i>
+			</div>
+		</nav>
+		<div class="menu-list"> 
 			<ul>
 				<li><a class="tab_link active" href="#home">Home</a></li>
 				<li><a class="tab_link" href="#about">About</a></li>
 				<li><a class="tab_link" href="#portfolio">Portfolio</a></li>
 				<li><a class="tab_link" href="#contact">Contact</a></li>
 			</ul>
-		</nav>
+		</div>
 	</header>
 	<section id="home">
 		<div class="content">
 			<div class="header-text">
 				<p>Web Developer</p>
-				<h1>Hi, I'm <span class="first-style">Arvind M M</span><br>from Tamil Nadu,India</h1>
+				<h1>Hi, I'm <span class="first-style">Arvind M M</span><br>from Tamil Nadu, India</h1>
 			</div>
 			<div class="header-img">
 				<img src="./assests/casual.jpg" alt="no img" />

@@ -23,3 +23,27 @@ window.addEventListener("scroll",()=>{
 
 
 })
+
+if(document.querySelector(".menu-list").style.display=="none"){
+    document.querySelector("#bars").style.display="none";
+    document.querySelector("#times").style.display="block";
+    document.querySelector(".menu-list").style.top="60px";
+}
+else{
+    document.querySelector("#bars").style.display="block";
+    document.querySelector("#times").style.display="none";
+    document.querySelector(".menu-list").style.top="-200px";
+}
+
+function openmenu(){
+    if(document.querySelector(".menu-list").style.top=="-200px"){
+        document.querySelector("#bars").style.display="none";
+        document.querySelector("#times").style.display="block";
+        document.querySelector(".menu-list").style.top="60px";
+    }
+    else{
+        document.querySelector("#bars").style.display="block";
+        document.querySelector("#times").style.display="none";
+        document.querySelector(".menu-list").style.top="-200px";
+    }
+}
